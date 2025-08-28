@@ -47,3 +47,10 @@ for (const callButton of callButtons) {
 
     })
 }
+
+// Clear Button Functionality
+
+const callHistoryContainer = document.getElementById("call-history-container");
+document.getElementById("clear-button").addEventListener("click", function(){
+    callHistoryContainer.innerHTML = "";
+});
