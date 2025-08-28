@@ -22,13 +22,28 @@ for (const callButton of callButtons) {
         let remainingCoinValue = document.getElementById("remaining-coin-value").innerText;
         let remainingCoinValueNumber = parseInt(remainingCoinValue);
 
-        if(remainingCoinValueNumber < 20){
+        let currentTime = new Date().toLocaleTimeString();
+
+        if (remainingCoinValueNumber < 20) {
             alert("❌ You don't have enough coins. You need at least 20 coins to make a call.")
         }
-        else{
+        else {
             alert(`📞 Calling ${serviceName} ${serviceNumber}`);
             document.getElementById("remaining-coin-value").innerText = (remainingCoinValueNumber - 20);
+
+            const createdDiv = document.createElement("div");
+            createdDiv.innerHTML = `<div class="flex justify-between items-center bg-[#f2f2f2] rounded-lg p-4">
+                        <div>
+                            <p class="text-[#111111] inter-font font-semibold text-base">${serviceName}</p>
+                            <h1 class="text-[#111111] inter-font font-semibold text-base">${serviceNumber}</h1>
+                        </div>
+                        <h2>${currentTime}</h2>
+                    </div>`
+
+            const callHistoryContainer = document.getElementById("call-history-container");
+            callHistoryContainer.appendChild(createdDiv);
+
         }
-        
+
     })
 }
