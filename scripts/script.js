@@ -54,3 +54,25 @@ const callHistoryContainer = document.getElementById("call-history-container");
 document.getElementById("clear-button").addEventListener("click", function(){
     callHistoryContainer.innerHTML = "";
 });
+
+// Copy Button Functionality
+
+const copyButtons = document.getElementsByClassName("copy-button");
+
+for(let copyButton of copyButtons){
+    copyButton.addEventListener("click", function(){
+        const serviceNumber = copyButton.parentNode.parentNode.children[3].innerText;
+
+        navigator.clipboard.writeText(serviceNumber)
+        .then(() => {
+          alert(`Number Copied: ${serviceNumber}`);
+        })
+        .catch(err => {
+          console.error("Failed to copy: ", err);
+        });
+
+        let copyCountValue = document.getElementById("copy-count").innerText;
+        let copyCountValueNumber = parseInt(copyCountValue);
+        document.getElementById("copy-count").innerText = copyCountValueNumber + 1;
+    })
+}
