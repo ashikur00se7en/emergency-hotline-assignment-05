@@ -228,7 +228,7 @@ Suppose, we have an unordered-list with "list" id and there are three list item 
 
 ✅ **Example:**
 
-Suppose, we have an anchor tag with "my-link" id and it's href attribute value is "https://example.com". And suppose we have a div with "parent" id.
+Suppose, we have an anchor tag with "my-link" id and it's href attribute value is "https://example.com". And suppose, we have a div with "parent" id. Then,
 
 <pre>
 const link = document.getElementById('myLink');
