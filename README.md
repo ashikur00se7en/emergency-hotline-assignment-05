@@ -114,13 +114,7 @@ When an event (like a click) happens on a DOM element:
 
 📈 **Visual Example:**
 
-<pre><code>```html <!DOCTYPE html> <html> <head> <title>Example Page</title> </head> <body> <div id="parent"> <button id="child">Click Me</button> </div> </body> </html> ```</code></pre>
-
-<pre><code>
-<div id="parent">
-  <button id="child">Click Me</button>
-</div>
-</code></pre>
+Suppose, We have a div with "parent" id and inside this div, there is a button with "child" id. Then,
 
 <pre>
 document.getElementById('parent').addEventListener('click', () => {
@@ -170,13 +164,7 @@ It relies on event bubbling—when an event on a child element bubbles up to its
 
 ✅ **Example:**
 
-<pre><code>
-<ul id="list">
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-</ul>
-</code></pre>
+Suppose, we have an unordered-list with "list" id and there are three list item inside the unordered list.
 
 **Instead of doing:**
 
@@ -190,7 +178,7 @@ It relies on event bubbling—when an event on a child element bubbles up to its
 
 <pre>
   document.getElementById('list').addEventListener('click', function(event) {
-  if (event.target.tagName === 'LI') {
+  if (event.target.tagName === 'li') {
     console.log('Clicked:', event.target.textContent);
   }
 });
@@ -216,9 +204,7 @@ It relies on event bubbling—when an event on a child element bubbles up to its
 
 **5. What is the difference between preventDefault() and stopPropagation() methods?**
 
-**Ans:** 
-
-🔹 event.preventDefault()
+**Ans:** 🔹 event.preventDefault()
 
 - What it does: Prevents the default browser behavior associated with the event.
 
@@ -242,15 +228,7 @@ It relies on event bubbling—when an event on a child element bubbles up to its
 
 ✅ **Example:**
 
-<pre><code>
-
-<a href="https://example.com" id="myLink">Click me</a>
-
-<div id="parent" style="margin-top: 20px; padding: 10px; border: 1px solid black;">
-  Parent Div (Click me too)
-</div>
-
-</code></pre>
+Suppose, we have an anchor tag with "my-link" id and it's href attribute value is "https://example.com". And suppose we have a div with "parent" id.
 
 <pre>
 const link = document.getElementById('myLink');
