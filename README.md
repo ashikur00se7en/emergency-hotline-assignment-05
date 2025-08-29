@@ -10,7 +10,7 @@ The differences between them are briefly described below:
 Selects one element by its unique id.
 
 ✅ Syntax:
-<pre> ```javascript document.getElementById("myId"); ``` </pre>
+<pre> ``` javascript document.getElementById("myId"); ``` </pre>
 
 ✅ Returns:
 A single DOM element or null if not found.
