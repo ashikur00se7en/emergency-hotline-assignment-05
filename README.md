@@ -114,6 +114,8 @@ When an event (like a click) happens on a DOM element:
 
 📈 **Visual Example:**
 
+<pre><code>```html <!DOCTYPE html> <html> <head> <title>Example Page</title> </head> <body> <div id="parent"> <button id="child">Click Me</button> </div> </body> </html> ```</code></pre>
+
 <pre><code>
 <div id="parent">
   <button id="child">Click Me</button>
